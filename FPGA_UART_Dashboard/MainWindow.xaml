@@ -1,0 +1,129 @@
+﻿<Window x:Class="FPGA_UART_Dashboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FPGA_UART_Dashboard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Cột trái: Cấu hình kết nối -->
+        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+            <GroupBox Header="UART Configuration" Padding="10">
+                <StackPanel>
+                    <TextBlock Text="COM Ports:" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbPorts" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Baudrate:" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbBaudrate" Margin="0,0,0,15">
+                        <ComboBoxItem Content="9600"/>
+                        <ComboBoxItem Content="19200"/>
+                        <ComboBoxItem Content="115200" IsSelected="True"/>
+                    </ComboBox>
+
+                    <Button x:Name="btnConnect" Content="Connect" Height="30" Click="btnConnect_Click"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="System status" Margin="0,15,0,0" Padding="10">
+                <TextBlock x:Name="txtStatus" Text="Disconnected" Foreground="Red" FontWeight="Bold"/>
+            </GroupBox>
+
+            <Button x:Name="btnTestConnect" Content="Test connection FPGA" Margin="50,25,50,0" Padding="5" Click="btnTestConnect_Click"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="btnLedOn" Content="Bật LED" Click="btnLedOn_Click" Width="100" Height="30" Margin="5"/>
+                <Button x:Name="btnLedOff" Content="Tắt LED" Click="btnLedOff_Click" Width="100" Height="30" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Cột phải: Hiển thị Dữ liệu & Test -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Dữ liệu cảm biến -->
+                <RowDefinition Height="Auto"/>
+                <!-- Stress Test BER -->
+                <RowDefinition Height="*"/>
+                <!-- Console Log -->
+            </Grid.RowDefinitions>
+
+            <!-- 1. Bảng dữ liệu Cảm biến -->
+            <GroupBox Grid.Row="0" Header="Sensor Specifications (Rx)" Padding="10">
+                <UniformGrid Columns="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Temperature (°C)" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="txtTemp" Text="0.0" FontSize="24" TextAlignment="Center" IsReadOnly="True" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Humidity (%)" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="txtHumid" Text="0.0" FontSize="24" TextAlignment="Center" IsReadOnly="True" Margin="0,5,0,0"/>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Fine dust" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="txtSensor3" Text="0" FontSize="24" TextAlignment="Center" IsReadOnly="True" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </UniformGrid>
+            </GroupBox>
+
+            <!-- 2. Khối chức năng Stress Test & BER (SW-06, 07, 08) -->
+            <GroupBox Grid.Row="1" Header="Stress Test &amp; Phân tích BER" Margin="0,10,0,0" Padding="10">
+                <StackPanel>
+                    <Grid Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="Mẫu dữ liệu:" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Column="0"/>
+                        <ComboBox x:Name="cmbPattern" Grid.Column="1" Margin="0,0,15,0">
+                            <ComboBoxItem Content="Random" IsSelected="True"/>
+                            <ComboBoxItem Content="0x55"/>
+                            <ComboBoxItem Content="0xAA"/>
+                            <ComboBoxItem Content="Ascending"/>
+                        </ComboBox>
+
+                        <TextBlock Text="Số Byte:" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Column="2"/>
+                        <TextBox x:Name="txtNumBytes" Text="1000" Width="80" Grid.Column="3" VerticalContentAlignment="Center"/>
+                    </Grid>
+
+                    <!-- Thanh ProgressBar hiển thị tiến trình nhận -->
+                    <ProgressBar x:Name="prgStressTest" Height="20" Minimum="0" Maximum="100" Margin="0,0,0,10" Foreground="Green"/>
+
+                    <Button x:Name="btnStressTest" Content="Bắt đầu Gửi Test (≥ 1000 bytes)" Height="35" Click="btnStressTest_Click" FontWeight="Bold"/>
+
+                    <!-- Bảng hiển thị kết quả phân tích -->
+                    <Border BorderBrush="Gray" BorderThickness="1" Margin="0,10,0,0" Padding="10" Background="#F9F9F9">
+                        <StackPanel>
+                            <TextBlock x:Name="txtBerResult" Text="Trạng thái: Chưa kiểm thử" FontWeight="Bold" Foreground="DarkBlue" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="txtErrorBits" Text="Số bit lỗi: 0 / 0" Margin="0,0,0,5"/>
+                            <TextBlock x:Name="txtSpeed" Text="Tốc độ: 0 B/s" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- 3. Console Log -->
+            <GroupBox Grid.Row="2" Header="Console Log" Margin="0,10,0,0" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Nút xuất file -->
+                    <Button x:Name="btnExportLog" Grid.Row="0" Content="Xuất File Log (CSV / TXT)" Height="30" Margin="0,0,0,5" Click="btnExportLog_Click" FontWeight="Bold"/>
+
+                    <TextBox x:Name="txtConsole" Grid.Row="1" FontSize="16" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

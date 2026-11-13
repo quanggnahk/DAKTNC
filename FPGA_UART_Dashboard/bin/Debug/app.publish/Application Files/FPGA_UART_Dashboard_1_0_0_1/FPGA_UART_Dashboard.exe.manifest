@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="FPGA_UART_Dashboard.exe" version="1.0.0.1" publicKeyToken="06aff2a218bf6478" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="FPGA_UART_Dashboard" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="FPGA_UART_Dashboard.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FPGA_UART_Dashboard.exe" size="37344">
+      <assemblyIdentity name="FPGA_UART_Dashboard" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>AS5o8UGvZU5ryMxSXYA5/i93F29PTjkNTQoyOILJvo4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.Core.Environment.dll" size="20432">
+      <assemblyIdentity name="RJCP.Core.Environment" version="0.3.1.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nMqRz/qu1PXITioqIPvmAbbur6M0Z+j+uADszfMMbrA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="de\RJCP.Core.Environment.resources.dll" size="5120">
+      <assemblyIdentity name="RJCP.Core.Environment.resources" version="0.3.1.0" publicKeyToken="5F5E7B70C6A74DEB" language="de" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VhfkQXgoPTgrJbNwOOGLmX9xPUgr00cxrMiR3yLZm9k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.Core.SysCompat.dll" size="31696">
+      <assemblyIdentity name="RJCP.Core.SysCompat" version="0.2.1.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FeuvHC0/mfitN+lMrsEQWw+1pJcVcZKdWfOJN+NUDCw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.Diagnostics.Trace.dll" size="19408">
+      <assemblyIdentity name="RJCP.Diagnostics.Trace" version="0.2.2.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3ANx9GPakb2rrtV80RqM3o/U2IuDct2CC/ntV/ASpP8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.IO.Buffer.dll" size="38352">
+      <assemblyIdentity name="RJCP.IO.Buffer" version="0.2.3.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>yqoCFauBB0ApQwKLj81hr6IBMNfYHn2MoshNYpb6G3A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.IO.Device.dll" size="40912">
+      <assemblyIdentity name="RJCP.IO.Device" version="0.8.4.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>s8Xi5jWy+StxpOjvsJyQ7ErwypR93ONlQtyYirO29cs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RJCP.SerialPortStream.dll" size="232400">
+      <assemblyIdentity name="RJCP.SerialPortStream" version="3.0.5.0" publicKeyToken="5F5E7B70C6A74DEB" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>DLCoYlxeh5zvev+4Uw9jloBFuhmqc171fgtjdpLJtO8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="FPGA_UART_Dashboard.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-MC8GEB8\dqk12" issuerKeyHash="e5089f6f0a6e41a45496abf7e2f39af0ecb03697" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>m+t3qDDVDcDqhO4QGwEjh165NeFTl+29967phF6obNQ=</DigestValue></Reference></SignedInfo><SignatureValue>prJJ7AX3lnhiq4SlCIqiKEWsz+dyD4dXSAj7NYcEs3YYD+17CIoohDBiZRiOyPbQkQNS1WEuxokSHTzZbuGibWiNpzK8irXyhB1XXwV1zPOidJbuTgdN7lsIJ2CKRwTWXStITV5X0zRs0otvWwe3YfU7tEg0jT5u9UFsi3yuv7M=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3XMysUgoGqW6jaovsAyClPT6vTZ3iUp5lDCF0Gjp6zwXfIBcXFmFXHo0TTn31RSGmW3GCUGTTYRsPVPuTGGN7SkEbO3FEnA7sup+SKnFJzrfVQ72oGTGHuhqR/BP7boBUG33aosApFTIThGcoi0732wnhy7wG7R4aEm6D3s3KEk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="d46ca85e84e9aef7bded9753e135b95e8723011b10ee84eac00dd530a877eb9b" Description="" Url=""><as:assemblyIdentity name="FPGA_UART_Dashboard.exe" version="1.0.0.1" publicKeyToken="06aff2a218bf6478" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-MC8GEB8\dqk12</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>iRZi7COm41Y41nbgTV9IWL1vdLCBNm8jy4Yjnz1XnsY=</DigestValue></Reference></SignedInfo><SignatureValue>imXqjsHCN0nyAcwShIc5EXRCunbbZcg5jIWk/gF0XHHzlRYWmE7I9YCqSFb9BH5HvcDn+rt/NMbbPDPlU9Kx8wvmziiCcQYNWxuIZ3CeerD1gRgQeYOLra/uTSu9hkS4681dJDr8ECnvjBcXESNgsyec70VyPSKql43Oaf/k4AA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3XMysUgoGqW6jaovsAyClPT6vTZ3iUp5lDCF0Gjp6zwXfIBcXFmFXHo0TTn31RSGmW3GCUGTTYRsPVPuTGGN7SkEbO3FEnA7sup+SKnFJzrfVQ72oGTGHuhqR/BP7boBUG33aosApFTIThGcoi0732wnhy7wG7R4aEm6D3s3KEk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQeF2o2wiZNKZMzp7qOsRx7TANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAE0AQwA4AEcARQBCADgAXABkAHEAawAxADIwHhcNMjYxMTA2MDAzODUzWhcNMjcxMTA2MDYzODUzWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAE0AQwA4AEcARQBCADgAXABkAHEAawAxADIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN1zMrFIKBqluo2qL7AMgpT0+r02d4lKeZQwhdBo6es8F3yAXFxZhVx6NE0599UUhpltxglBk02EbD1T7kxhje0pBGztxRJwO7LqfkipxSc631UO9qBkxh7oakfwT+26AVBt92qLAKRUyE4RnKItO99sJ4cu8Bu0eGhJug97NyhJAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAxc50zPWGSSGtUTZovYpppsvkRe67LbdKg2G/ZAtTqlTBfxzSLFVLqCvA+vdEvs3Kkd5OzyZszyc6m8DwRafJJcYcjv34bHiuMoJaIPS0k4G++a+8Uy0BaKCCNPXRi490ySWrY5gZJNk/fte1RV41ufiILGuoBT+UHVtx4zXF6po=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
